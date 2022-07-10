@@ -1,0 +1,387 @@
+@import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
+
+body {
+  background: linear-gradient(to left, purple, lightblue);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+.paragraph {
+    font-family: "consolas", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+  }
+  
+  .heading {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: context-menu;
+    color: white;
+    font-family: "Lobster";
+    text-shadow: 0px 0px 40px #00a9e2;
+  }
+  
+/* Nav bar */
+header a {
+  text-decoration: none;
+}
+
+header {
+  padding: 0 20px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+  .navbar-fixed-top.scrolled {
+    background-color: #292C35 !important;
+    transition: background-color 200ms linear;
+}
+header:hover {
+  background-color: #292C35;
+  transition: 0.5s;
+}
+header.active {
+  position: fixed;
+  background: #fff;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: rgba(255, 255, 255, 0.72);
+  top: -70px;
+  transition: 0.5s;
+  transform: translateY(70px);
+  transition: 500ms;
+}
+
+#brand {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+#brand a {
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: white;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  header nav {
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: block;
+  }
+}
+
+/* Day/Night Mode */
+body.dark {
+	background: #292C35;
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 26px;
+	width: 50px;
+	transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+
+.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
+}
+/* Social */
+
+/*──────────────────
+    social media
+──────────────────*/
+
+.social {
+    display: flex;
+    text-align: center;
+  }
+  
+  .social a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    position: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 22px 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    background: #00a9e2;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .social a:hover {
+    transform: scale(1.3);
+    transition: .3s;
+  }
+  
+  .end {
+    position: absolute;
+    color: #00a9e2;
+    bottom: 35px;
+    font-size: 14px;
+  }
+  
+  @keyframes shadow {
+    from {
+      text-shadow: 0 3px 10px rgba(255, 255, 255, 0.3);
+    }
+    to {
+      text-shadow: 0 3px 13px rgba(255, 255, 255, 0.9);
+    }
+  }
+/* Contact us */
+  .ws-contact {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px 30px 10px 0;
+    z-index: 9999;
+  }
+  .ws-contact-icon {
+    display: block;
+    margin: 10px 0;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    line-height: 70px;
+    text-align: center;
+    background: #6BB31E;
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+  .ws-contact-icon:not(:last-child) {
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .ws-contact-icon:not(:last-child).is-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .ws-contact-icon::before {
+    content: "";
+    background: url("https://www.upsieutoc.com/images/2018/12/29/ZFUFPff.png") no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    transition: 0.3s;
+  }
+  .ws-contact-icon::after {
+    content: attr(tooltip);
+    background: #fff;
+    color: #000;
+    border-radius: 50px;
+    padding: 10px;
+    position: absolute;
+    right: 100%;
+    line-height: 1;
+    min-width: 150px;
+    display: inline-block;
+    top: 8px;
+    margin-right: 10px;
+    font-size: 15px;
+    transition: 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  .ws-contact-icon.is-active::before {
+    background: url("https://www.upsieutoc.com/images/2018/12/29/0vsz83V.png") no-repeat;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+  }
+  .ws-contact-icon.call {
+    background: #F01F46;
+    transition-delay: 250ms;
+  }
+  .ws-contact-icon.call::before {
+    background: url("https://www.upsieutoc.com/images/2018/12/29/i3Qvln3.png") no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+  }
+  .ws-contact-icon.mail {
+    background: #691FF0;
+    transition-delay: 200ms;
+  }
+  .ws-contact-icon.mail::before {
+    background: url("https://www.upsieutoc.com/images/2018/12/29/K34s4SN.png") no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+  }
+  .ws-contact-icon.facebook {
+    background: #231FF0;
+    transition-delay: 150ms;
+  }
+  .ws-contact-icon.facebook::before {
+    background: url("https://www.upsieutoc.com/images/2018/12/29/0FgYLEn.png") no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+  }
+  .ws-contact-icon.message {
+    background: #1F7AF0;
+    transition-delay: 100ms;
+  }
+  .ws-contact-icon.message::before {
+    background: url("https://www.upsieutoc.com/images/2018/12/29/I6NY3Mi.png") no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+  }
+  .ws-contact-icon.zalo {
+    background: #F1F1F1;
+    transition-delay: 50ms;
+  }
+  .ws-contact-icon.zalo::before {
+    background: url("https://www.upsieutoc.com/images/2018/12/29/Ph1kn8Y.png") no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+  }
+  .ws-contact-icon:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .ws-contact-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  p {
+    color: #fff;
+    font-size: 14px;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  p i[class~="fa-coffee"] {
+    color: #966842;
+  }
+  p i[class~="fa-heart"] {
+    color: #fe0002;
+  }
+  

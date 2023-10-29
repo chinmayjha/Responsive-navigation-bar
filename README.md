@@ -17,7 +17,7 @@ Yes it is completly free and easy.
 
 #### How can i use it in my website?
 
-Just download the code and change the title and your done :)
+Just download the code and change the title and you're done :)
 
 ### For more question please visit the [issues](https://github.com/Chinmayjha/Responsive-navigation-bar/issues)
 

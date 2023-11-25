@@ -6,7 +6,7 @@ Responsive Navigation bar template for website only from Html, Css, Js
 
 ## Screenshots
 
-![Website screenshot]([https://gcdnb.pbrd.co/images/p3QljTAVZb7Y.png?o=1](https://i.postimg.cc/1tDz1vwK/image.png))
+![Website screenshot](https://i.postimg.cc/1tDz1vwK/image.png)
 
 
 ## FAQ

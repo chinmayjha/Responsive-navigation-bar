@@ -1,12 +1,51 @@
-@import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lobster&display=swap);
+
+/* CSS Custom Properties for Spacing */
+:root {
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+}
 
 body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   background: linear-gradient(to left, purple, lightblue);
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow-x: hidden;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: var(--space-sm);
+  background: #000;
+  color: #fff;
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: var(--space-sm);
+}
+
+/* Focus-visible styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 .paragraph {
     font-family: "consolas", sans-serif;
     font-style: italic;
@@ -23,8 +62,59 @@ body {
     cursor: context-menu;
     color: white;
     font-family: "Lobster";
+    font-weight: 700;
     text-shadow: 0px 0px 40px #00a9e2;
   }
+
+/* Main Content */
+main {
+  padding-block: var(--space-xl);
+  margin-top: 50px; /* Account for fixed header */
+  min-height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+/* Footer Styles */
+.foot {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: auto;
+}
+
+.credit {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.chinmay-link {
+  color: #00a9e2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.chinmay-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+  
   
 /* Nav bar */
 header a {
@@ -32,13 +122,15 @@ header a {
 }
 
 header {
-  padding: 0 20px;
+  padding: 0 var(--space-md);
   height: 50px;
   display: flex;
   justify-content: space-between;
   position: fixed;
   top: 0;
   width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
 }
   .navbar-fixed-top.scrolled {
     background-color: #292C35 !important;
@@ -77,6 +169,9 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-sm);
 }
 
 ul a {
@@ -84,8 +179,7 @@ ul a {
 }
 
 ul li {
-  padding: 5px;
-  margin-left: 10px;
+  padding: var(--space-sm);
 }
 
 ul li:hover {
@@ -98,6 +192,7 @@ ul li:hover {
   margin: auto 0;
   display: none;
   cursor: pointer;
+  padding: var(--space-sm);
 }
 
 #hamburger-icon div {
@@ -136,10 +231,26 @@ ul li:hover {
   left: 0;
   height: calc(100vh - 50px);
   width: 100%;
+  background: rgba(41, 44, 53, 0.95);
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: var(--space-xl);
+  gap: var(--space-md);
 }
 
 .mobile-menu li {
-  margin-bottom: 10px;
+  margin-bottom: var(--space-md);
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: var(--space-md);
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 600px) {
@@ -149,6 +260,29 @@ ul li:hover {
 
   #hamburger-icon {
     display: block;
+  }
+  
+  main {
+    padding-inline: var(--space-md);
+  }
+}
+
+/* Ensure layout works at 320px */
+@media only screen and (max-width: 320px) {
+  header {
+    padding: 0 var(--space-sm);
+  }
+  
+  #brand {
+    font-size: 16px;
+  }
+  
+  main {
+    padding-inline: var(--space-sm);
+  }
+  
+  .foot {
+    padding: var(--space-md) var(--space-sm);
   }
 }
 
